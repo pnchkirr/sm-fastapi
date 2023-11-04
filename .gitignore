@@ -3,3 +3,5 @@ myvenv/
 .env
 .DS_Store
 example.json
+tests/database.py
+tests/test_calculations.py
