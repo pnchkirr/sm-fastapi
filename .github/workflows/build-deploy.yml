@@ -4,15 +4,17 @@ on: [push, pull_request]
 
 jobs:
   job1:
+    environment:
+      name: testing
     env:
-      PG_USERNAME: postgres
-      PG_PASSWORD: Jpoy8ethqw
-      PG_HOST: localhost
-      PG_PORT: 5433
-      PG_DATABASE: fastapi
-      SECRET_KEY: 09d25e093faa6ca2555c818166b2a9563c93f7099f6f0f1caa6af63b89e8d3e7
-      ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      PG_USERNAME: ${{secrets.PG_USERNAME}}
+      PG_PASSWORD: ${{secrets.PG_PASSWORD}}
+      PG_HOST: ${{secrets.PG_HOST}}
+      PG_PORT: ${{secrets.PG_PORT}}
+      PG_DATABASE: ${{secrets.PG_DATABASE}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
     runs-on: ubuntu-latest
     steps:
       - name: Pull the git repository
