@@ -6,7 +6,13 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: pulling get repo
+      - name: Pull the git repository
         uses: actions/checkout@v4
-      - name: say hi to kirill
-        run: echo "hello kirill"
+      - name: Install python version 3.11.6
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.6'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
