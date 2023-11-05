@@ -88,8 +88,6 @@ jobs:
           key: ${{ secrets.UBUNTU_VM_SSH_KEY }}
           script: |
             ls
-            pwd
-            echo ${{secrets.UBUNTU_VM_PASSWORD}} | sudo -S su - fastapi
             cd app/src
             git pull
             echo ${{secrets.UBUNTU_VM_PASSWORD}} | sudo -S systemctl restart api
