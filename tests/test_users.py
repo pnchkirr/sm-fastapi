@@ -8,7 +8,7 @@ from app.config import settings
 def test_root(client):
     res = client.get("/")
     print(res.json().get('message')) # res: <Response [200 OK]> / json(): {'message': "Welcome to Kirill's API!"} / get: Welcome to Kirill's API!
-    assert res.json().get('message') == "Welcome to Kirill's API - successfully deployed by GitHub Actions"
+    assert res.json().get('message') == "Welcome to Kirill's API! - successfully deployed by GitHub Actions"
     assert res.status_code == 200
 
 def test_create_user(client):
