@@ -29,4 +29,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to Kirill's API!"}
+    return {"message": "Welcome to Kirill's API - successfully deployed by GitHub Actions"}
