@@ -90,4 +90,4 @@ jobs:
             ls
             cd app/src
             git pull
-            echo ${{secrets.UBUNTU_VM_PASSWORD}} | sudo -S systemctl restart api
+            echo password | sudo -S systemctl restart api
